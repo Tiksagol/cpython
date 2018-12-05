@@ -60,7 +60,7 @@ compatibility with older versions, see the :ref:`call-function-trio` section.
    The *timeout* argument is passed to :meth:`Popen.communicate`. If the timeout
    expires, the child process will be killed and waited for.  The
    :exc:`TimeoutExpired` exception will be re-raised after the child process
-   has terminated.
+   has terminated. Note: when *shell* is true, the child shell would be killed, but not its child processes.
 
    The *input* argument is passed to :meth:`Popen.communicate` and thus to the
    subprocess's stdin.  If used it must be a byte sequence, or a string if
